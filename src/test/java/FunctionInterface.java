@@ -30,6 +30,6 @@ public class FunctionInterface {
         Function<String, Test1> function4 = z -> new Test1();
 
         //Won't compile because we haven't applied generics to Function
-        Function function5 = x -> x + 1;
+        //Function function5 = x -> x + 1;
     }
 }
