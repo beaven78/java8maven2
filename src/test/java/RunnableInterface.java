@@ -5,7 +5,7 @@ import java.util.function.Function;
 /**
  * Created by stefos on 19/03/2015.
  */
-public class Test1 {
+public class RunnableInterface {
 
     @Test
     public void lamdbaTest(){

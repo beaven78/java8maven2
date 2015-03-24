@@ -12,7 +12,8 @@ public class UnaryOperatorInterface {
     public void test(){
 
         //UnaryOperator extends Fucntion interface
-        //R apply(T t);
+        //T apply(T t);
+        //However returns the same type as is passed
 
         UnaryOperator<String> unaryOperator = xStr -> xStr.concat("foo");
 

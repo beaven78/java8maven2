@@ -20,14 +20,14 @@ public class FunctionInterface {
         //Takes a single paramter 'y' and returns a boolean indicating if 'y' is greater than 5
         Function<Integer, Boolean> function2 = y -> y > 5;
 
-        //Takes a string and returns a custom object Test1
-        Function<String, Test1> function3 = z -> {
-            if (z.equals("terd")) return new Test1();
+        //Takes a string and returns a custom object RunnableInterface
+        Function<String, RunnableInterface> function3 = z -> {
+            if (z.equals("terd")) return new RunnableInterface();
             else return null;
         };
 
         //Singular line doesn't require brackets {}
-        Function<String, Test1> function4 = z -> new Test1();
+        Function<String, RunnableInterface> function4 = z -> new RunnableInterface();
 
         //Won't compile because we haven't applied generics to Function
         //Function function5 = x -> x + 1;
