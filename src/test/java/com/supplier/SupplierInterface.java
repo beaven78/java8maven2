@@ -22,6 +22,7 @@ public class SupplierInterface {
         //Supplier<T>
         //get()
 
+
         //Using Lambda expression
         driveVehicle(()-> new Vehicle());
         driveVehicle(()-> new Car());
@@ -29,5 +30,6 @@ public class SupplierInterface {
         //Using method expression
         driveVehicle(Vehicle::new);
         driveVehicle(Car::new);
+        driveVehicle(Car::doNothing);
     }
 }
