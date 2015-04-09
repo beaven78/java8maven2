@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by stefos on 08/04/2015.
+ *
  */
 public class MapForEach {
 
