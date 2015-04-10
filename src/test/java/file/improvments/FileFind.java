@@ -22,7 +22,7 @@ public class FileFind {
         //static Stream<Path>	find(Path start, int maxDepth, BiPredicate<Path,BasicFileAttributes> matcher, FileVisitOption... options)
         //Return a Stream that is lazily populated with Path by searching for files in a file tree rooted at a given starting file.
 
-        Stream<Path> pathStream = Files.find(path, 1, (pathVar, fileAttr) -> true, FileVisitOption.FOLLOW_LINKS);
+        Stream<Path> pathStream = Files.find(path, 1, (pathVar, fileAttr) -> fileAttr.isDirectory(), FileVisitOption.FOLLOW_LINKS);
 
         System.out.println(pathStream.count());
     }
