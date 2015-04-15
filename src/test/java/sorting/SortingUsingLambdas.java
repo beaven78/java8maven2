@@ -22,12 +22,12 @@ public class SortingUsingLambdas {
         List<Integer> collect = numbers.stream().sorted().collect(Collectors.toList());
 
         //Sorted taking a comparator object as a parameter
-        numbers.stream().sorted(new Comparator<Integer>() {
+        long count = numbers.stream().sorted(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 return 0;
             }
-        });
+        }).filter(myInt -> myInt < 6).count();
 
         //Sorted taking static Comparator method reverseOrder which is of type Comparator
         //Sorted returns a Stream
@@ -35,6 +35,6 @@ public class SortingUsingLambdas {
 
         numbers.stream().sorted(Comparator.<Integer>reverseOrder()).collect(Collectors.summingInt(t -> t + 2));
 
-        System.out.println("ddd");
+        System.out.println(collect1);
     }
 }

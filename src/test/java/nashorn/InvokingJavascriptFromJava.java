@@ -7,6 +7,7 @@ import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import javax.xml.ws.spi.Invoker;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.time.LocalDateTime;
@@ -26,10 +27,12 @@ public class InvokingJavascriptFromJava {
 
         Invocable invocable = (Invocable) engine;
 
+        //CALLING JAVASCRIPT FUNCTION FROM JAVA
         Object result = invocable.invokeFunction("fun1", "Peter Parker");
         System.out.println(result);
         System.out.println(result.getClass());
 
+        //PASSING JAVA OBJECT TO JAVASCRIPT METHOD
         invocable.invokeFunction("fun2", new Date());
         // [object java.util.Date]
 
@@ -57,9 +60,20 @@ public class InvokingJavascriptFromJava {
                 Arrays.toString(mirror.getOwnKeys(true)));
     }
 
+    //call methods on javascript objects
     //Invoking a method from a Javascript object
     public static void fun4(ScriptObjectMirror person) {
         System.out.println("Full Name is: " + person.callMember("getFullName"));
+    }
+
+    @Test
+    public void test3() throws ScriptException, NoSuchMethodException, FileNotFoundException {
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
+        engine.eval(new FileReader("scriptFun5.js"));
+        Invocable invocable = (Invocable) engine;
+
+        invocable.invokeFunction("fun5");
+
     }
 
     @Test

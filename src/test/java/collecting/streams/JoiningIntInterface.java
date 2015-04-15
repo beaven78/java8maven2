@@ -20,7 +20,7 @@ public class JoiningIntInterface {
 
         List<String> numbersStr = Arrays.asList("one", "two", "three");
 
-        //Wont compile, joinging only works with Strings
+        //Wont compile, joining only works with Strings
         //String collect = numbers.stream().collect(Collectors.joining(",", "[", "]"));
 
         String collectStartEnd = numbersStr.stream().collect(Collectors.joining(",", "[", "]"));
@@ -29,6 +29,8 @@ public class JoiningIntInterface {
 
         String collectNoParams = numbersStr.stream().collect(Collectors.joining());
 
+        System.out.println(collectStartEnd);
         System.out.println(collect);
+        System.out.println(collectNoParams);
     }
 }

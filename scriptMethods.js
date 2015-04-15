@@ -8,6 +8,8 @@ var fun2 = function (object) {
     print("JS Class Definition: " + Object.prototype.toString.call(object));
 };
 
+
+//CALLING JAVA FUNCTION FROM JAVASCRIPT
 var MyJavaClass = Java.type('nashorn.InvokingJavascriptFromJava');
 
 var result = MyJavaClass.fun1('John Doe');
@@ -56,8 +58,14 @@ function Person(firstName, lastName) {
     }
 }
 
+//PASSING JAVASCRIPT OBJECT INTO JAVA METHOD
 var person1 = new Person("Peter", "Parker");
 MyJavaClass.fun4(person1);
+
+var fun5 = function(){
+    var person1 = Person("Kate","Griffiths");
+    MyJavaClass.fun4();
+};
 
 // Full Name is: Peter Parker
 

@@ -23,9 +23,9 @@ public class MapComputeIfAbsentPresent {
 
         names.computeIfAbsent("MyList", myName -> new LinkedList<String>()); //Wouldn't compile IF Maps generic <String,String>
 
-        names.computeIfPresent("Antony", (dd, ss) -> dd + "+" + ss); //Like method says, only ran if present
+        names.computeIfPresent("Antony", (key, value) -> key + "+" + value); //Like method says, only ran if present
 
-        names.compute("Julie", (k,v) -> k+v); //Evaluates regardless and adds it to the Map
+        names.compute("Julie", (k,v) -> "Foster"); //Evaluates regardless and adds it to the Map
 
         System.out.println(names);
     }
