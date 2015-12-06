@@ -3,6 +3,7 @@ package collection.flatmap;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import static java.util.Arrays.asList;
@@ -21,6 +22,12 @@ public class FlatMapExample {
                 .flatMap(numbers -> numbers.stream())
                 .peek(streamElement -> System.out.println(streamElement))
                 .collect(toList());
+
+        together.stream().forEach(d -> System.out.println(d));
+
+        Optional<String> mySTr = Optional.of(null);
+
+        mySTr.get();
 
         assertEquals(asList(1, 2, 3, 4), together);
 
