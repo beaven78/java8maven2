@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.*;
 
 /**
- *
+ * Uses Java 8 syntax to count average
  */
 public class AverageCount {
 
